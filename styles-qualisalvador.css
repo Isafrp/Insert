@@ -1,0 +1,185 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #ffffff;
+    color: #333;
+}
+
+/* Estilização do cabeçalho e menu */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: #1e4d36; /* Tom mais escuro para o cabeçalho */
+}
+
+/* Ajuste da logo */
+.logo img {
+    width: 120px; /* Ajuste o tamanho conforme necessário */
+    height: auto;
+}
+
+/* No mobile, reduzir o tamanho se necessário */
+@media (max-width: 768px) {
+    .logo img {
+        width: 100px; /* Reduz a logo em telas menores */
+    }
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem; /* Responsivo (16px) */
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.language img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Conteúdo principal */
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 24px;
+    color: #006400;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+header p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+}
+
+header p em {
+    font-style: italic;
+}
+
+.logo {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.logo img {
+    max-width: 700px; /* Ajuste do tamanho da imagem */
+    height: auto; /* Mantém a proporção */
+    margin: 30px; /* Centraliza horizontalmente */
+}
+
+.objective {
+    font-size: 16px;
+    text-align: justify;
+    margin: 20px 0;
+}
+
+.partners {
+    margin-top: 30px;
+}
+
+.partners h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #006400;
+    text-decoration: underline;
+}
+
+.partners ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 16px;
+}
+
+.partners ul li {
+    margin-bottom: 10px;
+}
+
+.partners ul li a {
+    text-decoration: none;
+    color: #006400;
+    font-weight: bold;
+}
+
+.partners ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Esconde o checkbox */
+#menu-toggle {
+    display: none;
+}
+
+/* Estilo do botão de menu (hambúrguer) */
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    right: 5%;
+    top: 20px;
+    z-index: 1000;
+    padding: 10px;
+}
+
+.menu-icon .bar {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+/* Estilizando o menu para dispositivos móveis */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: flex;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #1e4d36;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    /* Quando o checkbox for marcado, exibir o menu */
+    #menu-toggle:checked + .menu-icon + nav ul {
+        display: flex;
+    }
+
+    nav ul li {
+        padding: 10px 0;
+    }
+}
