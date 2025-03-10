@@ -1,0 +1,195 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #fff;
+    background-color: #276345; /* Verde do fundo */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: #1e4d36; /* Tom mais escuro para o cabeçalho */
+}
+
+/* Ajuste da logo */
+.logo img {
+    width: 120px; /* Ajuste o tamanho conforme necessário */
+    height: auto;
+}
+
+/* No mobile, reduzir o tamanho se necessário */
+@media (max-width: 768px) {
+    .logo img {
+        width: 100px; /* Reduz a logo em telas menores */
+    }
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem; /* Responsivo (16px) */
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.language img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Estilo do Rodapé */
+.footer {
+    background-color: #1e7a75; /* Cor semelhante à imagem original */
+    color: #ffffff;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1100px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Mantém o layout flexível em telas menores */
+}
+
+/* Definição das colunas */
+.footer-column {
+    flex: 1;
+    padding: 10px 20px;
+    min-width: 250px;
+    text-align: center; /* Centraliza o conteúdo */
+}
+
+/* Específico para o mapa (Location) */
+.location {
+    flex: 1.5; /* Dá mais espaço ao mapa */
+}
+
+/* Específico para o Contact Info */
+.contact-info {
+    flex: 1;
+}
+
+/* Específico para o Address Info */
+.address-info {
+    flex: 1;
+}
+
+/* Títulos das colunas */
+.footer-column h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Parágrafos */
+.footer-column p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* Ícones de redes sociais */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icons img {
+    width: 28px;
+    height: 28px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
+/* Estilo do mapa */
+.footer-column iframe {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Rodapé inferior */
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Esconde o checkbox */
+#menu-toggle {
+    display: none;
+}
+
+/* Estilo do botão de menu (hambúrguer) */
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    right: 5%;
+    top: 20px;
+    z-index: 1000;
+    padding: 10px;
+}
+
+.menu-icon .bar {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+/* Estilizando o menu para dispositivos móveis */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: flex;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #1e4d36;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    /* Quando o checkbox for marcado, exibir o menu */
+    #menu-toggle:checked + .menu-icon + nav ul {
+        display: flex;
+    }
+
+    nav ul li {
+        padding: 10px 0;
+    }
+}
