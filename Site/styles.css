@@ -1,0 +1,533 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #fff;
+    background-color: #276345; /* Verde do fundo */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: #1e4d36; /* Tom mais escuro para o cabeçalho */
+}
+
+/* Ajuste da logo */
+.logo img {
+    width: 120px; /* Ajuste o tamanho conforme necessário */
+    height: auto;
+}
+
+/* No mobile, reduzir o tamanho se necessário */
+@media (max-width: 768px) {
+    .logo img {
+        width: 100px; /* Reduz a logo em telas menores */
+    }
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem; /* Responsivo (16px) */
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.language img {
+    width: 24px;
+    height: 24px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 50px 5%;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 50px 5%;
+}
+
+main .intro {
+    display: flex;
+    align-items: center; /* Alinha verticalmente */
+    justify-content: space-between; /* Espaço entre texto e imagem */
+    max-width: 1200px; /* Define a largura máxima */
+    margin: 0 auto; /* Centraliza o conteúdo */
+    padding: 40px; /* Espaçamento interno */
+}
+
+main .text-container {
+    flex: 1; /* Prioriza o espaço para o texto */
+    max-width: 80%; /* Limita a largura do texto */
+    padding-right: 40px; /* Espaçamento entre texto e imagem */
+}
+
+main .text-container h1 {
+    font-size: 2.3rem; /* Tamanho do título */
+    line-height: 1.4; /* Espaçamento entre linhas do título */
+    margin-bottom: 1rem; /* Espaço abaixo do título */
+    color: #ffffff; /* Cor do título */
+}
+
+main .text-container p {
+    font-size: 1.0rem; /* Tamanho do subtítulo */
+    line-height: 1.8; /* Espaçamento entre linhas do subtítulo */
+    color: #ffffff; /* Cor do subtítulo */
+    text-align: left; /* Justifica o texto */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    main .text-container {
+        max-width: 100%; /* Texto ocupa toda a largura */
+        padding-right: 0; /* Remove espaçamento lateral */
+        text-align: center; /* Centraliza o texto */
+    }
+
+    main .text-container h1 {
+        font-size: 2rem; /* Tamanho menor do título em telas pequenas */
+    }
+
+    main .text-container p {
+        font-size: 1.2rem; /* Tamanho menor do subtítulo em telas pequenas */
+        text-align: justify; /* Justifica o texto */
+        text-align-last: center; /* Centraliza a última linha */
+    }
+}
+
+
+/* Configuração da imagem */
+main .image-container {
+    flex: 1; /* Faz a imagem ocupar espaço disponível */
+}
+
+main .image-container img {
+    max-width: 110%; /* Ajusta a imagem ao tamanho do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    margin-left: 140px; /* Espaço à esquerda para afastar do texto */
+}
+
+/* Responsividade para dispositivos menores */
+@media (max-width: 768px) {
+    main .intro {
+        flex-direction: column; /* Empilha o texto e a imagem */
+        align-items: center; /* Centraliza o conteúdo */
+    }
+
+    main .text-container {
+        max-width: 100%; /* Texto ocupa toda a largura */
+        padding-right: 0; /* Remove o espaçamento lateral */
+        text-align: center; /* Centraliza o texto */
+    }
+
+    main .image-container {
+        display: none; /* Esconde a imagem em telas menores */
+    }
+}
+/* Container do slider */
+.slider-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+/* Estrutura do slider */
+.slider {
+    width: 90%;
+    max-width: 800px;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Oculta os inputs */
+input {
+    display: none;
+}
+
+/* Área dos slides */
+.slides {
+    display: flex;
+    width: calc(100% * 19); /* Ajuste correto */
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Cada slide ocupa exatamente o espaço de uma imagem */
+.slide {
+    width: calc(100% / 19);
+    flex: none;
+}
+
+/* Ajuste para evitar zoom */
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Evita cortes nas imagens */
+    border-radius: 10px;
+}
+
+/* Movimento correto dos slides */
+#slide1:checked ~ .slides { transform: translateX(0%); }
+#slide2:checked ~ .slides { transform: translateX(-5.26%); }
+#slide3:checked ~ .slides { transform: translateX(-10.52%); }
+#slide4:checked ~ .slides { transform: translateX(-15.78%); }
+#slide5:checked ~ .slides { transform: translateX(-21.04%); }
+#slide6:checked ~ .slides { transform: translateX(-26.3%); }
+#slide7:checked ~ .slides { transform: translateX(-31.56%); }
+#slide8:checked ~ .slides { transform: translateX(-36.82%); }
+#slide9:checked ~ .slides { transform: translateX(-42.08%); }
+#slide10:checked ~ .slides { transform: translateX(-47.34%); }
+#slide11:checked ~ .slides { transform: translateX(-52.6%); }
+#slide12:checked ~ .slides { transform: translateX(-57.86%); }
+#slide13:checked ~ .slides { transform: translateX(-63.12%); }
+#slide14:checked ~ .slides { transform: translateX(-68.38%); }
+#slide15:checked ~ .slides { transform: translateX(-73.64%); }
+#slide16:checked ~ .slides { transform: translateX(-78.9%); }
+#slide17:checked ~ .slides { transform: translateX(-84.16%); }
+#slide18:checked ~ .slides { transform: translateX(-89.42%); }
+#slide19:checked ~ .slides { transform: translateX(-94.68%); }
+
+/* 🔵 Paginadores (Bolinhas) */
+.navigation {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    z-index: 10; /* Garante que fiquem sobre o slider */
+}
+
+.navigation label {
+    width: 12px;
+    height: 12px;
+    margin: 5px;
+    border-radius: 50%;
+    background-color: white;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: opacity 0.3s, background-color 0.3s;
+}
+
+/* Efeito ao passar o mouse */
+.navigation label:hover {
+    opacity: 1;
+}
+
+/* A bolinha correspondente ao slide ativo fica destacada */
+#slide1:checked ~ .navigation label:nth-child(1),
+#slide2:checked ~ .navigation label:nth-child(2),
+#slide3:checked ~ .navigation label:nth-child(3),
+#slide4:checked ~ .navigation label:nth-child(4),
+#slide5:checked ~ .navigation label:nth-child(5),
+#slide6:checked ~ .navigation label:nth-child(6),
+#slide7:checked ~ .navigation label:nth-child(7),
+#slide8:checked ~ .navigation label:nth-child(8),
+#slide9:checked ~ .navigation label:nth-child(9),
+#slide10:checked ~ .navigation label:nth-child(10),
+#slide11:checked ~ .navigation label:nth-child(11),
+#slide12:checked ~ .navigation label:nth-child(12),
+#slide13:checked ~ .navigation label:nth-child(13),
+#slide14:checked ~ .navigation label:nth-child(14),
+#slide15:checked ~ .navigation label:nth-child(15),
+#slide16:checked ~ .navigation label:nth-child(16),
+#slide17:checked ~ .navigation label:nth-child(17),
+#slide18:checked ~ .navigation label:nth-child(18),
+#slide19:checked ~ .navigation label:nth-child(19) {
+    opacity: 1;
+    background-color: #333;
+}
+
+/* Seção de colaborações */
+.collaborations {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #ffffff;
+    border-top: 2px solid #276345;
+    overflow: hidden;
+}
+
+/* Título e descrição */
+.collaborations h2 {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #276345;
+}
+
+.collaborations p {
+    font-size: 25px;
+    color: #888;
+    margin-bottom: 30px;
+}
+
+/* Centralizar as imagens no meio */
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+    padding: 20px 0;
+    position: relative;
+}
+
+/* Ajuste da faixa de logos */
+.carousel-track {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    justify-content: center; /* Centraliza as imagens horizontalmente */
+    flex-wrap: wrap; /* Permite que as imagens quebrem linha, se necessário */
+}
+
+/* Estilização das imagens */
+.carousel-track img {
+    max-width: 120px; /* Tamanho padrão */
+    height: auto;
+    flex-shrink: 0; /* Impede que as imagens diminuam */
+}
+
+
+/* 🔹 Corrigindo o problema no mobile */
+@media (max-width: 768px) {
+    .carousel {
+        overflow-x: hidden;
+        white-space: nowrap; /* Garante que tudo fique em linha */
+    }
+
+    .carousel-track {
+        display: flex;
+        flex-wrap: nowrap; /* Mantém as imagens em linha reta */
+        animation: scroll-mobile 10s linear infinite;
+    }
+
+    /* Ajustando tamanho das imagens no mobile */
+    .carousel-track img {
+        max-width: 90px;
+    }
+/* Seção de colaborações */
+.collaborations {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #ffffff;
+    border-top: 2px solid #276345;
+    overflow: hidden;
+}
+
+/* Contêiner do carrossel */
+.carousel {
+    width: 100%;
+    overflow: hidden;
+    background-color: white;
+    padding: 20px 0;
+    position: relative;
+    white-space: nowrap;
+}
+
+/* Faixa de logos animada */
+.carousel-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    animation: scroll-desktop 20s linear infinite;
+}
+
+/* Estilização das imagens */
+.carousel-track img {
+    max-width: 120px;
+    height: auto;
+    margin: 0 15px;
+    flex-shrink: 0;
+}
+
+/* 🔹 Animação para DESKTOP */
+@keyframes scroll-desktop {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* 🔹 Ajuste para telas menores */
+@media (max-width: 768px) {
+    .carousel-track {
+        animation: scroll-mobile 10s linear infinite;
+    }
+
+    @keyframes scroll-mobile {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(-50%);
+        }
+    }
+}
+
+/* Estilo do Rodapé */
+.footer {
+    background-color: #1e7a75; /* Cor semelhante à imagem original */
+    color: #ffffff;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1100px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Mantém o layout flexível em telas menores */
+}
+
+/* Definição das colunas */
+.footer-column {
+    flex: 1;
+    padding: 10px 20px;
+    min-width: 250px;
+    text-align: center; /* Centraliza o conteúdo */
+}
+
+/* Específico para o mapa (Location) */
+.location {
+    flex: 1.5; /* Dá mais espaço ao mapa */
+}
+
+/* Específico para o Contact Info */
+.contact-info {
+    flex: 1;
+}
+
+/* Específico para o Address Info */
+.address-info {
+    flex: 1;
+}
+
+/* Títulos das colunas */
+.footer-column h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Parágrafos */
+.footer-column p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* Ícones de redes sociais */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icons img {
+    width: 28px;
+    height: 28px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
+/* Estilo do mapa */
+.footer-column iframe {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Rodapé inferior */
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Esconde o checkbox */
+#menu-toggle {
+    display: none;
+}
+
+/* Estilo do botão de menu (hambúrguer) */
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    right: 5%;
+    top: 20px;
+    z-index: 1000;
+    padding: 10px;
+}
+
+.menu-icon .bar {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+/* Estilizando o menu para dispositivos móveis */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: flex;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #1e4d36;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    /* Quando o checkbox for marcado, exibir o menu */
+    #menu-toggle:checked + .menu-icon + nav ul {
+        display: flex;
+    }
+
+    nav ul li {
+        padding: 10px 0;
+    }
+}
