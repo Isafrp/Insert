@@ -1,0 +1,214 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #fff;
+    background-color: #ffffff; /* Verde do fundo */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: #1e4d36; /* Tom mais escuro para o cabeçalho */
+}
+
+/* Ajuste da logo */
+.logo img {
+    width: 120px; /* Ajuste o tamanho conforme necessário */
+    height: auto;
+}
+
+/* No mobile, reduzir o tamanho se necessário */
+@media (max-width: 768px) {
+    .logo img {
+        width: 100px; /* Reduz a logo em telas menores */
+    }
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem; /* Responsivo (16px) */
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.language img {
+    width: 24px;
+    height: 24px;
+}
+
+.members {
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Título principal em destaque */
+.members h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Subtítulo */
+.members h2 + p {
+    font-size: 20px;
+    margin-bottom: 40px;
+    color: #444;
+}
+
+/* Subtítulos das seções (Líderes, Pós, etc.) */
+.members h3 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+/* Layout geral dos grupos de membros */
+.member-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
+    justify-content: flex-start; /* Alinhamento à esquerda */
+}
+
+/* Bloco de cada membro */
+.member-item {
+    text-align: center;
+    width: 120px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease;
+}
+
+/* Efeito hover */
+.member-item:hover {
+    transform: scale(1.05);
+}
+
+/* Imagens */
+.member-item img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 2px solid #ccc;
+}
+
+/* Texto abaixo da imagem */
+.member-item p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Responsividade */
+@media screen and (max-width: 600px) {
+    .member-item {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .member-item {
+        width: 100%;
+    }
+}
+
+
+
+@media (max-width: 768px) { /* Tablets */
+    main .intro h1 {
+        font-size: 2rem; /* Reduz o título para 32px */
+    }
+    main .intro p {
+        font-size: 1rem; /* Reduz o texto do parágrafo para 16px */
+    }
+    main {
+        padding: 40px 5%; /* Ajusta as margens internas */
+    }
+}
+
+@media (max-width: 480px) { /* Celulares */
+    main .intro h1 {
+        font-size: 1.8rem; /* Reduz o título para 28px */
+    }
+    main .intro p {
+        font-size: 0.9rem; /* Reduz o texto do parágrafo para 14px */
+    }
+    main {
+        padding: 30px 5%; /* Ajusta o espaçamento em dispositivos menores */
+    }
+}
+
+/* Esconde o checkbox */
+#menu-toggle {
+    display: none;
+}
+
+/* Estilo do botão de menu (hambúrguer) */
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    right: 5%;
+    top: 20px;
+    z-index: 1000;
+    padding: 10px;
+}
+
+.menu-icon .bar {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+/* Estilizando o menu para dispositivos móveis */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: flex;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #1e4d36;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    /* Quando o checkbox for marcado, exibir o menu */
+    #menu-toggle:checked + .menu-icon + nav ul {
+        display: flex;
+    }
+
+    nav ul li {
+        padding: 10px 0;
+    }
+}
